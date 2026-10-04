@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Detection</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <h1 class="logo">PHISHING DETECTION<span>.</span></h1>
+
+    <nav>
+      <a href="/" style="margin-right:15px; color:white;">Home</a>
+      <a href="#" style="margin-right:15px; color:white;">About</a>
+      <a href="#" style="color:white;">Contact</a>
+    </nav>
+
+    <a href="/inspect" 
+       style="padding:8px 15px; border:1px solid gold; border-radius:5px; color:gold; text-decoration:none;">
+       Inspect
+    </a>
+
+  </div>
+</header>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center justify-content-center"
+style="height:100vh; background: url('{{ url_for('static', filename='img/hero-bg.jpg') }}') center center; background-size: cover;">
+
+  <div class="container text-center">
+
+    <h1 style="color:white; font-size:3rem; font-weight:bold;">
+      URL-Phishing Detection<span style="color:gold;">.</span>
+    </h1>
+
+    <!-- FORM -->
+    <form action="/output" method="POST">
+  
+  <input type="text" name="url" placeholder="Enter URL here"
+         style="padding:12px; width:320px; border-radius:5px;" required>
+
+  <br><br>
+
+  <button type="submit">
+    Check URL
+  </button>
+
+</form>
+
+  </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Detection Result</title>
+</head>
+
+<body style="margin:0; font-family:Arial; background-color:#1e2a38; color:white; text-align:center;">
+
+  <div style="margin-top:80px;">
+
+    <h1 style="color: {{color}};">{{ predict }}</h1>
+
+    <h3>Confidence: {{ confidence }}%</h3>
+
+    <h3>Risk Score: {{ risk }}/100</h3>
+
+    <p><strong>Detection Time:</strong> {{ time }} seconds</p>
+
+    <p><strong>Action:</strong> {{ action }}</p>
+
+    <h3>Reasons:</h3>
+    <ul style="list-style:none; padding:0;">
+      {% for r in reasons %}
+        <li>⚠ {{ r }}</li>
+      {% endfor %}
+    </ul>
+
+    <br>
+
+    <a href="/"
+       style="padding:10px 20px; background-color:#007bff; color:white; text-decoration:none; border-radius:5px;">
+      Check Another URL
+    </a>
+
+  </div>
+
+</body>
+</html>
